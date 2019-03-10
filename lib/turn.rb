@@ -6,7 +6,7 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-# code your input_to_index and move method here!
+
 def input_to_index(input)
   input = input.to_i - 1
 end
@@ -19,6 +19,15 @@ end
 def update_array_at_with(array, index, value)
   board[index] = value
 end
+
+def valid_move?(board, index)
+  if position_taken?(board, index) == false && index.between?(0, 8);
+      true
+  else
+     false
+  end
+end
+
 
 def turn(board)
   puts "Please enter 1-9: ";
